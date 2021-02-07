@@ -3,19 +3,21 @@ import { CommonModule } from '@angular/common';
 import { CourseShortComponent } from './components/course-short/course-short.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { InstructorListComponent } from './components/instructor-list/instructor-list.component';
+import { CourseCategoriaComponent } from './components/course-categoria/course-categoria.component';
 
 
 
 @NgModule({
   declarations: [
-    CourseShortComponent, 
-    CourseListComponent, 
-    InstructorListComponent],
+    CourseShortComponent,
+    CourseListComponent,
+    InstructorListComponent,
+    CourseCategoriaComponent],
   imports: [
     CommonModule
   ],
-  exports:[
-    CourseListComponent, 
+  exports: [
+    CourseListComponent,
     InstructorListComponent
   ]
 })

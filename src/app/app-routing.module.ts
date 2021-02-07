@@ -5,11 +5,10 @@ import { NotFoundPageComponent } from './core/pages/not-found-page/not-found-pag
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/layout/layout.module').then(m=>m.LayoutModule)
-   
+    loadChildren: () => import('./modules/layout/layout.module').then(m => m.LayoutModule)
   },
   {
-    path: "**",
+    path: '**',
     component: NotFoundPageComponent
   }
 ];

@@ -6,7 +6,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
 const routes: Routes = [
 {
   path: '',
-  component: LayoutComponent,  
+  component: LayoutComponent,
   children: [
     {
       path: '',
@@ -19,8 +19,8 @@ const routes: Routes = [
     {
       path: 'contactus',
       loadChildren: () => import('../contact/contact.module').then(m => m.ContactModule)
-    }    
-  ]  
+    }
+  ]
 },
 {
   path: 'admin',

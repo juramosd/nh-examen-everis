@@ -12,8 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
-    FooterComponent, 
-    LayoutAdminComponent, 
+    FooterComponent,
+    LayoutAdminComponent,
     HeaderComponent,
     LayoutComponent,
     SuscribeFormComponent
