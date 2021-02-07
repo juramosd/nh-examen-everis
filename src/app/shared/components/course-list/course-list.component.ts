@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-course-list',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseListComponent implements OnInit {
 
+  @Input() isFeatured: boolean = false;
+  @Input() showCourses: number = 5;
+  @Input() categoryId: number = 0;
   constructor() { }
 
   ngOnInit(): void {

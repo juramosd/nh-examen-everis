@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseDetailPageComponent implements OnInit {
 
+  courseId: number;
   constructor() { }
 
   ngOnInit(): void {

@@ -8,8 +8,9 @@ import { CourseCategoriaComponent } from './pages/course-categoria/course-catego
 
 @NgModule({
   declarations: [
-    CourseListPageComponent, 
-    CourseDetailPageComponent, CourseCategoriaComponent,
+    CourseListPageComponent,
+    CourseDetailPageComponent,
+    CourseCategoriaComponent,
   ],
   imports: [
     CommonModule,
