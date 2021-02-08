@@ -1,2 +1,6 @@
-<p>course-list works!</p>
-<app-course-short></app-course-short>
+<h3>Curso destacados</h3>
+<div class="row">
+    <div class="col-md-4" *ngFor="let course of courses">
+        <app-course-short [book] ="book"></app-course-short>
+    </div>
+</div>

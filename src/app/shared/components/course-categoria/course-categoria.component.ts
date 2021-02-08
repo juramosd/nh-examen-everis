@@ -8,7 +8,7 @@ import { Category } from '../../interfaces/category';
 })
 export class CourseCategoriaComponent implements OnInit {
 
-  category: Category[];
+  categorys: Category[];
   constructor() { }
 
   ngOnInit(): void {

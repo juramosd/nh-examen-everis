@@ -18,7 +18,8 @@ import { CourseCategoriaComponent } from './components/course-categoria/course-c
   ],
   exports: [
     CourseListComponent,
-    InstructorListComponent
+    InstructorListComponent,
+    CourseCategoriaComponent
   ]
 })
 export class SharedModule { }
