@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../../interfaces/category';
 
 @Component({
   selector: 'app-course-categoria',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CourseCategoriaComponent implements OnInit {
 
+  category: Category[];
   constructor() { }
 
   ngOnInit(): void {
