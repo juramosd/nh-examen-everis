@@ -1,1 +1,5 @@
-<p>course-short works!</p>
+<p>{{course.id}}</p>
+<p>{{course.name}}</p>
+<p>{{course.image}}</p>
+<p>{{course.language}}</p>
+<p *ngIf="!isFeatured">{{course.summary}}</p>

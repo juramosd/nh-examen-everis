@@ -4,6 +4,7 @@ import { CourseShortComponent } from './components/course-short/course-short.com
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { InstructorListComponent } from './components/instructor-list/instructor-list.component';
 import { CourseCategoriaComponent } from './components/course-categoria/course-categoria.component';
+import { InstructorShortComponent } from './components/instructor-short/instructor-short.component';
 
 
 
@@ -12,7 +13,8 @@ import { CourseCategoriaComponent } from './components/course-categoria/course-c
     CourseShortComponent,
     CourseListComponent,
     InstructorListComponent,
-    CourseCategoriaComponent],
+    CourseCategoriaComponent,
+    InstructorShortComponent],
   imports: [
     CommonModule
   ],

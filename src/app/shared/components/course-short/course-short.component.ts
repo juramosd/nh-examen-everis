@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Course } from '../../interfaces/course';
 
 @Component({
@@ -8,10 +8,12 @@ import { Course } from '../../interfaces/course';
 })
 export class CourseShortComponent implements OnInit {
 
-  course: Course;
+  @Input() course: Course;
+  @Input() isFeatured : boolean;
   constructor() { }
 
   ngOnInit(): void {
+    console.log(`isFeatured : ${this.isFeatured}`);
   }
 
 }

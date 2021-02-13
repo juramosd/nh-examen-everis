@@ -3,7 +3,7 @@ import { languageCode } from '../type';
 export interface Course {
     id: number;
     name: string;
-    featured: true;
+    featured: boolean;
     image: string;
     language: languageCode;
     price: number;
