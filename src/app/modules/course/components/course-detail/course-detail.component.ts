@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Course } from 'src/app/shared/interfaces/course';
-import { CourseMockService } from 'src/app/shared/services/course-mock.service';
+import { CourseMockService } from 'src/app/shared/services/course/course-mock.service';
 
 @Component({
   selector: 'app-course-detail',

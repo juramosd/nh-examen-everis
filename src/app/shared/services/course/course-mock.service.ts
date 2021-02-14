@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Course } from '../interfaces/course';
-import { coursesMock } from '../mocks/courses.mock';
+import { Course } from '../../interfaces/course';
+import { coursesMock } from '../../mocks/courses.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +43,5 @@ export class CourseMockService {
         observer.next(courses);
       }
     );
-
   }
 }

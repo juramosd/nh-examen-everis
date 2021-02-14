@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Category } from '../interfaces/category';
-import { Course } from '../interfaces/course';
-import { categorysMock } from '../mocks/categorys.mock';
-import { coursesMock } from '../mocks/courses.mock';
+import { Category } from '../../interfaces/category';
+import { Course } from '../../interfaces/course';
+import { categorysMock } from '../../mocks/categorys.mock';
+import { coursesMock } from '../../mocks/courses.mock';
 
 @Injectable({
   providedIn: 'root'
