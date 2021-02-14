@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
       }
 
       if (event instanceof NavigationEnd) {
-          // Hide loading indicator
+          
       }
 
       if (event instanceof NavigationError) {
