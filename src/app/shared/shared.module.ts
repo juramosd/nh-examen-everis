@@ -9,6 +9,7 @@ import { CourseMockService } from './services/course/course-mock.service';
 import { CategoryMockService } from './services/category/category-mock.service';
 import { InstructorMockService } from './services/instructor-mock.service';
 import { RouterModule } from '@angular/router';
+import { FormMessageErrorComponent } from './components/form-message-error/form-message-error.component';
 
 
 
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     CourseListComponent,
     InstructorListComponent,
     CourseCategoriaComponent,
-    InstructorShortComponent],
+    InstructorShortComponent,
+    FormMessageErrorComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -27,6 +29,7 @@ import { RouterModule } from '@angular/router';
     CourseListComponent,
     CourseShortComponent,
     InstructorListComponent,
+    FormMessageErrorComponent,
   ],
   providers: [
     CourseMockService,

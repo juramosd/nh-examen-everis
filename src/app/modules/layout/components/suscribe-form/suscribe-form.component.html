@@ -1,5 +1,7 @@
 <form [formGroup]="suscribeForm" (ngSubmit)="toSuscribe(suscribeForm)">
     <input type="email" placeholder="Enter Your Email" formControlName="email">
-    <button>-></button><br />   
+    <button [disabled]="suscribeForm.invalid && (!suscribeForm.touched || !suscribeForm.dirty)" >-></button><br />   
+    <app-form-message-error [control]="email"></app-form-message-error>
   </form>
+
   

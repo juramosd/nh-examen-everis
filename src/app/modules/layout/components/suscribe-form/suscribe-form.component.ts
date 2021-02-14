@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, AbstractControl, Validators } from '@angular/forms';
+import { data } from '../../models/suscription.model';
 import { SuscribeService } from '../../services/suscribe.service';
 
 @Component({
@@ -9,11 +10,14 @@ import { SuscribeService } from '../../services/suscribe.service';
 })
 export class SuscribeFormComponent implements OnInit {
 
+  data: data;
   suscribeForm: FormGroup;
   constructor(
     private fb: FormBuilder,
     private suscribeService: SuscribeService,
-  ) { }
+  ) { 
+    this.data  = new data();
+  }
 
   ngOnInit(): void {
     this.initForm();
@@ -25,14 +29,17 @@ export class SuscribeFormComponent implements OnInit {
 
   initForm(): void {
     this.suscribeForm = this.fb.group({
-      email: [null, null]
+      email: [null, [Validators.required,Validators.pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)]]
     });
   }
 
   toSuscribe(suscribeForm): void {
     if (suscribeForm.valid) {
-      this.suscribeService.save(suscribeForm.get('email').value);
-      this.suscribeForm.controls['email'].setValue('');
+      this.data.email= suscribeForm.get('email').value      
+      let valor = this.suscribeService.save(this.data).subscribe(
+        res => console.log("prueba")
+      );
+      //this.suscribeForm.controls['email'].setValue('');
     }
   }
 }
