@@ -1,1 +1,25 @@
-<p>contacus works!</p>
+<br>
+<h2>Leave Us Message</h2>
+<br>
+<form [formGroup]="contactForm">
+    <div class="row">
+        <div class="col-lg-4">
+            <input type="text" placeholder="Full Name Here" formControlName="fullName">
+        </div>
+        <div class="col-lg-4">
+            <input type="email" placeholder="Email Here" formControlName="email">
+        </div>
+        <div class="col-lg-4">
+            <input type="phone" placeholder="Phone Number" formControlName="phone">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-12">
+            <textarea rows="10"  style="min-width: 90%" placeholder="Write Message" formControlName="message">
+            </textarea>
+        </div>
+    </div>
+
+    <button>SEND MESSAGE</button><br />
+</form>

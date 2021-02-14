@@ -15,9 +15,7 @@ export class CourseListComponent implements OnInit {
   courses: Course[];
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(`IsFeatured: ${this.isFeatured}`);
-    console.log(`categoryId: ${this.categoryId}`);
+  ngOnInit(): void {    
     this.courses = this.fetchCurse();
   }
 

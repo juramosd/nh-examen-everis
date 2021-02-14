@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { SuscribeFormComponent } from './components/suscribe-form/suscribe-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LayoutAuthComponent } from './pages/layout-auth/layout-auth.component';
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
     LayoutAdminComponent,
     HeaderComponent,
     LayoutComponent,
-    SuscribeFormComponent
+    SuscribeFormComponent,
+    LayoutAuthComponent,
   ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
+    ReactiveFormsModule,
     SharedModule,
   ]
 })

@@ -1,0 +1,24 @@
+<form class="form-signin" [formGroup]="loginForm">
+    <img class="mb-4" src="/assets/images/logo_nh.png" alt="" width="auto" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+    <label for="inputUsername" style="text-align: right;">Username</label>
+    <input type="text" class="form-control" placeholder="username" autofocus formControlName="username">
+    <label for="inputPassword" style="text-align: right;">Password</label>
+    <input type="password" class="form-control" placeholder="Password" formControlName="password">
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    <div class="row">
+        <div class="col-md-4">
+            <label>
+                <input type="checkbox" value="Save-Password"> Save Password
+            </label>
+        </div>
+        <div class="col-md-4">            
+        </div>
+        <div class="col-md-4">
+            <label>
+                 Forget Password?
+            </label>
+        </div>
+    </div>
+</form>

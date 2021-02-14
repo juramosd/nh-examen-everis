@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-suscribe-form',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuscribeFormComponent implements OnInit {
 
-  constructor() { }
+  suscribeForm: FormGroup;
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.initForm();
   }
 
+  get email(): AbstractControl {
+    return this.suscribeForm.get('email')
+  }
+
+  initForm() {
+    this.suscribeForm = this.fb.group({
+      email: [null,null]
+    })
+  }
+
+  toSuscribe(suscribeForm) {
+  }
 }

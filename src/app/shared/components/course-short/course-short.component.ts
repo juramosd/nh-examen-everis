@@ -13,7 +13,7 @@ export class CourseShortComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(`isFeatured : ${this.isFeatured}`);
+    //console.log(`isFeatured : ${this.isFeatured}`);
   }
 
 }
