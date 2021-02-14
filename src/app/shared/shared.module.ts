@@ -5,6 +5,10 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { InstructorListComponent } from './components/instructor-list/instructor-list.component';
 import { CourseCategoriaComponent } from './components/course-categoria/course-categoria.component';
 import { InstructorShortComponent } from './components/instructor-short/instructor-short.component';
+import { CourseMockService } from './services/course-mock.service';
+import { CategoryMockService } from './services/category-mock.service';
+import { InstructorMockService } from './services/instructor-mock.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,12 +20,18 @@ import { InstructorShortComponent } from './components/instructor-short/instruct
     CourseCategoriaComponent,
     InstructorShortComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   exports: [
     CourseListComponent,
     InstructorListComponent,
     CourseCategoriaComponent
+  ],
+  providers: [
+    CourseMockService,
+    CategoryMockService,
+    InstructorMockService,
   ]
 })
 export class SharedModule { }

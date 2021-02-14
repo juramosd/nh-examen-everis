@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContacusComponent implements OnInit {
 
-  contactForm: FormGroup
+  contactForm: FormGroup;
   constructor(
     private fb: FormBuilder
   ) { }
@@ -20,8 +20,8 @@ export class ContacusComponent implements OnInit {
   initForm(): void {
     this.contactForm = this.fb.group({
       fullName: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],  
-      phone: [null, Validators.required],   
+      email: [null, [Validators.required, Validators.email]],
+      phone: [null, Validators.required],
       message: [null, Validators.required]
     });
   }

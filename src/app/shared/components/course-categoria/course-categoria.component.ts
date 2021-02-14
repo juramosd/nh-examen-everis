@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../../interfaces/category';
+import { CategoryMockService } from '../../services/category-mock.service';
 
 @Component({
   selector: 'app-course-categoria',
@@ -10,30 +11,16 @@ export class CourseCategoriaComponent implements OnInit {
 
   categorys: Category[];
 
-  constructor() { }
+  constructor(
+    private categoryService: CategoryMockService,
+  ) { }
 
   ngOnInit(): void {
-    this.categorys = this.fetchCurse();
+    this.fetchCurse();
   }
 
-  fetchCurse(): Category[] {   
-    const categorias : Category[] = 
-      [
-        {
-            "id": 1,
-            "name": "Diseño"
-        },
-        {
-            "id": 2,
-            "name": "Desarrollo"
-        },
-        {
-            "id": 3,
-            "name": "Tecnologia de informacion"
-        }
-    ];
-
-    return categorias;
+  fetchCurse(): void {
+    this.categoryService.getCategorys().subscribe(categorys => this.categorys = categorys);
   }
 
 }

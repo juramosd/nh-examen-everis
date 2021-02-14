@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Instructor } from '../../interfaces/instructor';
+import { InstructorMockService } from '../../services/instructor-mock.service';
 
 @Component({
   selector: 'app-instructor-list',
@@ -9,32 +10,15 @@ import { Instructor } from '../../interfaces/instructor';
 export class InstructorListComponent implements OnInit {
 
   instructores: Instructor[];
-  constructor() { }
+  constructor(
+    private instructorService: InstructorMockService
+  ) { }
 
   ngOnInit(): void {
-    this.instructores = this.fetchCurse();
+    this.fetchInstructors();
   }
 
-  fetchCurse(): Instructor[] {   
-    const instructores : Instructor[] = 
-      [{
-        "id": 1,
-        "name": "Jose Carlos",
-        "lastName": "Ramirez Tello",
-        "educationTitle": "Frontend Teacher",
-        "image": "http://examen-nh.jcramireztello.com/media/instructor/04.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Ebed",
-        "lastName": "Guerra",
-        "educationTitle": "Desing Teacher",
-        "image": "http://examen-nh.jcramireztello.com/media/instructor/01.jpg"
-    }
-    ];
-
-    return instructores;
+  fetchInstructors(): void {
+    this.instructorService.getInstructors().subscribe(instructors => this.instructores = instructors);
   }
-
-
 }

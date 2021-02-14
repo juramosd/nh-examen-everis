@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [ContacusComponent],
   imports: [
     CommonModule,
-    ContactRoutingModule,    
+    ContactRoutingModule,
     ReactiveFormsModule
   ]
 })

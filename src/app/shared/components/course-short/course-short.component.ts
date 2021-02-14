@@ -9,7 +9,7 @@ import { Course } from '../../interfaces/course';
 export class CourseShortComponent implements OnInit {
 
   @Input() course: Course;
-  @Input() isFeatured : boolean;
+  @Input() isFeatured: boolean;
   constructor() { }
 
   ngOnInit(): void {

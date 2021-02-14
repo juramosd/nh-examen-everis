@@ -10,6 +10,7 @@ import { SuscribeFormComponent } from './components/suscribe-form/suscribe-form.
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutAuthComponent } from './pages/layout-auth/layout-auth.component';
+import { SuscribeService } from './services/suscribe.service';
 
 
 @NgModule({
@@ -26,6 +27,9 @@ import { LayoutAuthComponent } from './pages/layout-auth/layout-auth.component';
     LayoutRoutingModule,
     ReactiveFormsModule,
     SharedModule,
+  ],
+  providers: [
+    SuscribeService
   ]
 })
 export class LayoutModule { }
