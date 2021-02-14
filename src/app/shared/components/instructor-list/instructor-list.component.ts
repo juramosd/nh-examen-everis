@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Instructor } from '../../interfaces/instructor';
 import { InstructorMockService } from '../../services/instructor-mock.service';
+import { InstructorApiService } from '../../services/instructor/instructor-api.service';
 
 @Component({
   selector: 'app-instructor-list',
@@ -11,7 +12,7 @@ export class InstructorListComponent implements OnInit {
 
   instructores: Instructor[];
   constructor(
-    private instructorService: InstructorMockService
+    private instructorService: InstructorApiService
   ) { }
 
   ngOnInit(): void {
@@ -19,6 +20,6 @@ export class InstructorListComponent implements OnInit {
   }
 
   fetchInstructors(): void {
-    this.instructorService.getInstructors().subscribe(instructors => this.instructores = instructors);
+    this.instructorService.getCategorys().subscribe(instructors => this.instructores = instructors);
   }
 }

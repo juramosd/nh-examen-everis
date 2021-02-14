@@ -13,10 +13,10 @@
             <a class="nav-link"  routerLink="" (click)="selectExterno();">Inicio</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="course" (click)="selectInterno();">Cursos</a>
+            <a class="nav-link" routerLink="course" >Cursos</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="contactus" (click)="selectInterno();">Contactenos</a>
+            <a class="nav-link" routerLink="contactus">Contactenos</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['active']">
             <a class="nav-link" [routerLink]="['admin', 'login']" >Administrador</a>
@@ -30,10 +30,8 @@
   </header>
 
   <ng-template #header2>
-    <div class="headerExterno">
+    <div [ngClass]="'headerInterno'">
     </div>
   </ng-template>
-  
-  <div *ngIf='isInterno else header2' class="headerInterno" >
+  <div *ngIf='!isInterno else header2' [ngClass]="'headerExterno'">
   </div>
-

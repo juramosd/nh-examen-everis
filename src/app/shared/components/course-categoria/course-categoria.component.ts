@@ -16,7 +16,7 @@ export class CourseCategoriaComponent implements OnInit {
     private categoryService: CategoryMockService,
   ) {
     this.clickCategory = new EventEmitter();
-   }
+  }
 
   ngOnInit(): void {
     this.fetchCurse();
@@ -26,9 +26,9 @@ export class CourseCategoriaComponent implements OnInit {
   fetchCurse(): void {
     this.categoryService.getCategorys().subscribe(categorys => this.categorys = categorys);
   }
-  
-  onClickCategoria(cateogriId:number): void{    
-    this.clickCategory.emit(cateogriId);
+
+  onClickCategoria(categoryId: number): void {
+    this.clickCategory.emit(categoryId);
   }
 
 }

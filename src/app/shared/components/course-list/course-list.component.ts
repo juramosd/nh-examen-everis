@@ -25,12 +25,8 @@ export class CourseListComponent implements OnInit {
    // this.classShowCourse = 12 / this.showCourses;
   }
 
-  ngChanges(): void{
-    console.log(this.categoryId);
-    this.fetchCurses();
-  }
   fetchCurses(): void {
-    console.log(this.categoryId);
+    this.categoryId==undefined?this.categoryId=0:this.categoryId;
     this.title = this.isFeatured ? "Available Courses" : "Our Cursos";
     if(this.categoryId!=0){
       this.courseService.getCourseporCategoria(this.categoryId).subscribe(courses => this.courses=courses);  
@@ -38,5 +34,10 @@ export class CourseListComponent implements OnInit {
     else{
       this.isFeatured ? this.courseService.getFeaturedCourses().subscribe(courses => this.courses=courses) : this.courseService.getCourses().subscribe(courses => this.courses=courses);
     }
+  }
+  
+  selectCategory(categoryId: number) {
+    this.categoryId = categoryId;
+    this.fetchCurses();
   }
 }

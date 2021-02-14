@@ -8,14 +8,10 @@ import { Course } from 'src/app/shared/interfaces/course';
 })
 export class CourseListPageComponent implements OnInit {
 
-  categoryId: number;
   courses: Course[];
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  selectCategory(categoryId: number) {
-    this.categoryId = categoryId;
-  }
 }

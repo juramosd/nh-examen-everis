@@ -27,7 +27,6 @@ import { RouterModule } from '@angular/router';
     CourseListComponent,
     CourseShortComponent,
     InstructorListComponent,
-    CourseCategoriaComponent
   ],
   providers: [
     CourseMockService,

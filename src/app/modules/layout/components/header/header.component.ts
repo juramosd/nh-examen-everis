@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError  } from '@angular/router';
 
 
 @Component({
@@ -7,19 +8,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isInterno: boolean;
+  @Input() isInterno: boolean;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { 
+    this.ngDetectarUrl();
+  }
 
   ngOnInit(): void {
     this.isInterno = false;
   }
 
-  selectInterno(): void {
-    this.isInterno = true;
-  }
   selectExterno(): void {
     this.isInterno = false;
+  }
+
+  ngDetectarUrl():void{
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {         
+          if(event.url=="/"){
+            console.log("evento: "+event.url);
+            this.isInterno = false;
+          }else{
+            this.isInterno = true;
+          }
+      }
+
+      if (event instanceof NavigationEnd) {
+          // Hide loading indicator
+      }
+
+      if (event instanceof NavigationError) {
+          // Hide loading indicator
+
+          // Present error to user
+          console.log(event.error);
+      }
+  });
   }
 
 }
