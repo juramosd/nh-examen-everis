@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Course } from '../../interfaces/course';
+import { CourseApiService } from '../../services/course/course-api.service';
 import { CourseMockService } from '../../services/course/course-mock.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class CourseListComponent implements OnInit {
   courses: Course[];
   //classShowCourse: number;
   constructor(
-    private courseService: CourseMockService,
+    private courseService: CourseApiService,
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +25,10 @@ export class CourseListComponent implements OnInit {
    // this.classShowCourse = 12 / this.showCourses;
   }
 
+  ngChanges(): void{
+    console.log(this.categoryId);
+    this.fetchCurses();
+  }
   fetchCurses(): void {
     console.log(this.categoryId);
     this.title = this.isFeatured ? "Available Courses" : "Our Cursos";

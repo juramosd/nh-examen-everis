@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Course } from 'src/app/shared/interfaces/course';
+import { CourseApiService } from 'src/app/shared/services/course/course-api.service';
 import { CourseMockService } from 'src/app/shared/services/course/course-mock.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class CourseDetailComponent implements OnInit {
   @Input() courseId: number;
   course: Course;
   constructor(
-    private courseService: CourseMockService,
+    private courseService: CourseApiService,
   ) { }
 
   ngOnInit(): void {
