@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     CourseListComponent,
+    CourseShortComponent,
     InstructorListComponent,
     CourseCategoriaComponent
   ],

@@ -9,7 +9,7 @@ import { CourseMockService } from '../../services/course-mock.service';
 })
 export class CourseListComponent implements OnInit {
 
-  @Input() isFeatured;
+  @Input() isFeatured: boolean = false;
   @Input() showCourses;
   @Input() categoryId: number = 0;
   title: string;
@@ -20,13 +20,12 @@ export class CourseListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.isFeatured = false;
     this.fetchCurses();
-    // this.classShowCourse = 12 / this.showCourses;
+   // this.classShowCourse = 12 / this.showCourses;
   }
 
   fetchCurses(): void {
-    this.title = this.isFeatured ? "Cursos Destacados" : "Cursos";
-    this.isFeatured ? this.courseService.getFeaturedCourses().subscribe(courses => this.courses = courses) : this.courseService.getCourses().subscribe(courses => this.courses = courses);
+    this.title = this.isFeatured ? "Available Courses" : "Our Cursos";
+    this.isFeatured ? this.courseService.getFeaturedCourses().subscribe(courses => this.courses=courses) : this.courseService.getCourses().subscribe(courses => this.courses=courses);
   }
 }
